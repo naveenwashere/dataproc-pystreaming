@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/gsutil'
+  id: 'Backup currently active DAGs'
+  args: ['cp', '-r', 'gs://asia-south1-plutus-fico-177e8536-bucket/dags/*', 'gs://asia-south1-plutus-fico-177e8536-bucket/old-dags']
+- name: 'gcr.io/cloud-builders/gsutil'
+  id: 'Upload new DAGs'
+  args: ['cp', '-r', 'dags', 'gs://asia-south1-plutus-fico-177e8536-bucket/']

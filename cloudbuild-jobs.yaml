@@ -1,0 +1,4 @@
+steps:
+- name: 'gcr.io/cloud-builders/gsutil'
+  id: 'Copy Jobs to GCS'
+  args: ['cp', '-r', 'spark', 'gs://fico-spark-jobs']
